@@ -1,0 +1,31 @@
+{
+  "name": "podsync-backend",
+  "version": "1.0.0",
+  "description": "Backend service for syncing Google Forms responses to MySQL database",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "sync": "node src/scripts/manualSync.js",
+    "test-connection": "node src/scripts/testConnection.js",
+    "test-db": "node test-database.js",
+    "check-analytics": "node -e \"import('./src/controllers/analyticsController.js').then(m => console.log('Analytics controller loaded successfully'))\"",
+    "create-tables": "node -e \"import('./src/models/index.js').then(async m => { await m.sequelize.sync({force: false}); console.log('Tables created'); process.exit(0); })\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "googleapis": "^126.0.1",
+    "mysql2": "^3.14.1",
+    "node-cron": "^3.0.3",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
