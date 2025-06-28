@@ -30,7 +30,7 @@ Advanced backend service for PodSync digital signage CMS, managing podcast labor
 
 ### 1. Clone and Install Dependencies
 ```bash
-git clone <repository-url>
+git clone https://github.com/strxchao/podsync-web-app.git
 cd podsync-web-app/backend
 npm install
 ```
@@ -64,14 +64,14 @@ JWT_SECRET=your-super-secret-key
 
 ### 3. Database Setup
 ```bash
-# Initialize database and create tables
-npm run db:init
-
-# Or run migrations manually
-npm run db:migrate
-
 # Test database connection
-npm run db:test
+npm run test-db
+
+# Alternative connection test
+npm run test-connection
+
+# Create database tables (manual)
+# Connect to MySQL and run the SQL scripts from the main README.md
 ```
 
 ### 4. Google Sheets Setup
@@ -90,8 +90,11 @@ npm run dev
 # Production
 npm start
 
-# With database initialization
-npm run start:init
+# Manual sync with Google Sheets
+npm run sync
+
+# Check analytics controller
+npm run check-analytics
 ```
 
 ## 📡 API Documentation
@@ -260,8 +263,9 @@ The analytics system provides:
 ### Development Mode
 ```bash
 npm run dev          # Start with nodemon (hot reload)
-npm run db:test      # Test database connection
-npm run sync:manual  # Trigger manual Google Sheets sync
+npm run test-db      # Test database connection
+npm run sync         # Trigger manual Google Sheets sync
+npm run check-analytics # Verify analytics controller loads
 ```
 
 ### Testing
@@ -273,10 +277,10 @@ npm run test:coverage # Generate coverage report
 
 ### Database Operations
 ```bash
-npm run db:init      # Initialize database with tables
-npm run db:migrate   # Run pending migrations  
-npm run db:seed      # Seed with sample data
-npm run db:reset     # Reset database (development only)
+npm run test-db      # Test database connection
+npm run test-connection # Alternative connection test
+# Database setup requires manual SQL execution
+# See main README.md for complete SQL scripts
 ```
 
 ## 📦 Production Deployment
@@ -300,8 +304,8 @@ export NODE_ENV=production
 # Install production dependencies
 npm ci --only=production
 
-# Initialize database
-npm run db:init
+# Test database connection
+npm run test-db
 
 # Start server
 npm start
@@ -355,8 +359,9 @@ Access real-time system metrics via `/api/analytics/system`
 - Write tests for new features
 
 ## Developer About
-- Name: [Muhammad Habib Yusuf]
-- Email: [mhabibyusuf224@gmail.com]
+- Name: Muhammad Habib Yusuf
+- Instagram: @habibyusuf_
+- Email: mhabibyusuf224@gmail.com
 
 ### Project Purpose
 This project is intended to complete the final assignment, with this web application users will be able to manage the digital signage content of the Faculty of Applied Sciences podcast laboratory well.

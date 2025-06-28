@@ -52,7 +52,7 @@ Modern React.js admin panel for PodSync - a comprehensive content management sys
 
 1. **Clone and Navigate**
 ```bash
-git clone <repository-url>
+git clone https://github.com/strxchao/podsync-web-app.git
 cd podsync-web-app/frontend
 ```
 
@@ -460,22 +460,10 @@ localStorage.setItem('debug', 'podsync:*');
 - **Intersection Observer** - Lazy load images and content
 - **Virtual Scrolling** - For large data tables
 
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## 📞 Support & Documentation
-
-- **Live Demo**: [Demo URL]
-- **API Documentation**: Backend `/health` endpoint
-- **Component Storybook**: `npm run storybook` (if configured)
-- **Issues**: GitHub Issues for bug reports and feature requests
-
----
-
 ## Developer About
-- Name: [Muhammad Habib Yusuf]
-- Email: [mhabibyusuf224@gmail.com]
+- Name: Muhammad Habib Yusuf
+- Instagram: @habibyusuf_
+- Email: mhabibyusuf224@gmail.com
 
 ### Project Purpose
 This project is intended to complete the final assignment, with this web application users will be able to manage the digital signage content of the Faculty of Applied Sciences podcast laboratory well.
